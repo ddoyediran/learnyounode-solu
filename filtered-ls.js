@@ -19,8 +19,9 @@ fs.readdir(filePath, (err, list) => {
 
   // alternative solution
   list.map((file) => {
+    // check for those with the extension
     if (path.extname(file) === `.${extension}`) {
-      console.log(file);
+      console.log(file); // print to console
     }
   });
 });
