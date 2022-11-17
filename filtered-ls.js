@@ -1,8 +1,9 @@
 const fs = require("fs");
+const path = require("path");
 const { pathToFileURL } = require("url");
 
 const filePath = process.argv[2]; // get the third item in the array
-const secondArg = process.argv[3]; // get the fourth item in the array
+const extension = process.argv[3]; // get the fourth item in the array
 
 fs.readdir(filePath, (err, list) => {
   if (err) {
@@ -10,10 +11,10 @@ fs.readdir(filePath, (err, list) => {
   }
 
   let arrList = list.filter((file) => {
-    return path.extname(file) === `.${secondArg}`;
+    return path.extname(file) === `.${extension}`;
   });
 
   for (let i = 0; i < arrList.length; i++) {
-    console.log(arrList(i));
+    console.log(arrList[i]);
   }
 });
