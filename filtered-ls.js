@@ -1,6 +1,5 @@
 const fs = require("fs");
 const path = require("path");
-const { pathToFileURL } = require("url");
 
 const filePath = process.argv[2]; // get the third item in the array
 const extension = process.argv[3]; // get the fourth item in the array
