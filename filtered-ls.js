@@ -9,11 +9,18 @@ fs.readdir(filePath, (err, list) => {
     throw err;
   }
 
-  let arrList = list.filter((file) => {
-    return path.extname(file) === `.${extension}`;
-  });
+  //   let arrList = list.filter((file) => {
+  //     return path.extname(file) === `.${extension}`;
+  //   });
 
-  for (let i = 0; i < arrList.length; i++) {
-    console.log(arrList[i]);
-  }
+  //   for (let i = 0; i < arrList.length; i++) {
+  //     console.log(arrList[i]);
+  //   }
+
+  // alternative solution
+  list.map((file) => {
+    if (path.extname(file) === `.${extension}`) {
+      console.log(file);
+    }
+  });
 });
