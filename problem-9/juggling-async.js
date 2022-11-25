@@ -1,4 +1,3 @@
-// const fs = require("fs");
 const http = require("http");
 const bl = require("bl");
 
@@ -23,9 +22,6 @@ for (let i = 0; i < pathLength.length; i++) {
             console.log(result[i]);
           }
         }
-        //result.push(data.toString());
-        //console.log(data.length); // length of the data
-        //console.log(data.toString()); // print the data
       })
     );
   });
