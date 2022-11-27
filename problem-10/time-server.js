@@ -1,5 +1,19 @@
 const net = require("net");
 
-const pathLength = process.argv.slice(2);
+const portNum = process.argv[2];
 
-net.createServer();
+const server = net.createServer(function (socket) {
+  let date = new Date(); // create date instance
+  // create the current date
+  let data = `${date.getFullYear()}-${
+    date.getMonth() + 1
+  }-${date.getDate()} ${date.getHours()}:${date.getMinutes()}`;
+
+  // write the data to the socket
+  socket.write(data + "\n");
+
+  // close the socket
+  socket.end(data);
+});
+
+server.listen(parseInt(portNum));
