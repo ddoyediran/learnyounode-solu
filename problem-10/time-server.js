@@ -13,7 +13,7 @@ const server = net.createServer(function (socket) {
   socket.write(data + "\n");
 
   // close the socket
-  socket.end(data);
+  socket.end();
 });
 
 server.listen(parseInt(portNum));
