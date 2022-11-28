@@ -1,6 +1,6 @@
 const net = require("net");
 
-const portNum = process.argv[2];
+const port = process.argv[2];
 
 const server = net.createServer(function (socket) {
   let date = new Date(); // create date instance
@@ -16,4 +16,4 @@ const server = net.createServer(function (socket) {
   socket.end();
 });
 
-server.listen(parseInt(portNum));
+server.listen(parseInt(port));
